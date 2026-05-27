@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const nodes = [
-  { id: 'existence', label: 'Tồn tại xã hội', x: 25, y: 50, color: '#da251d' },
-  { id: 'consciousness', label: 'Ý thức xã hội', x: 75, y: 50, color: '#da251d' },
-  { id: 'production', label: 'Phương thức sản xuất', x: 25, y: 20, color: '#f59e0b' },
-  { id: 'natural_pop', label: 'Dân cư & Tự nhiên', x: 15, y: 78, color: '#f59e0b' },
-  { id: 'dialectics', label: 'Quan hệ biện chứng', x: 50, y: 50, color: '#da251d' },
-  { id: 'independence', label: 'Tính độc lập tương đối', x: 75, y: 78, color: '#f59e0b' },
-  { id: 'forms', label: 'Các hình thái ý thức', x: 80, y: 20, color: '#f59e0b' },
+  { id: 'existence', label: 'Tồn tại xã hội', x: 25, y: 50, color: '#da251d', width: 22 },
+  { id: 'consciousness', label: 'Ý thức xã hội', x: 75, y: 50, color: '#da251d', width: 22 },
+  { id: 'production', label: 'Phương thức sản xuất', x: 25, y: 20, color: '#f59e0b', width: 30 },
+  { id: 'natural_pop', label: 'Dân cư & Tự nhiên', x: 15, y: 80, color: '#f59e0b', width: 26 },
+  { id: 'dialectics', label: 'Quan hệ biện chứng', x: 50, y: 50, color: '#da251d', width: 26 },
+  { id: 'independence', label: 'Tính độc lập tương đối', x: 75, y: 80, color: '#f59e0b', width: 32 },
+  { id: 'forms', label: 'Các hình thái ý thức', x: 80, y: 20, color: '#f59e0b', width: 30 },
 ];
 
 const links = [
@@ -67,39 +67,62 @@ const MindMap = () => {
             );
           })}
 
-          {nodes.map((node) => (
-            <motion.g
-              key={node.id}
-              onMouseEnter={() => setHoveredNode(node.id)}
-              onMouseLeave={() => setHoveredNode(null)}
-              className="cursor-pointer"
-            >
-              <motion.circle
-                cx={node.x}
-                cy={node.y}
-                r={isRelated(node.id) ? 6 : 4.5}
-                fill={isRelated(node.id) ? node.color : 'white'}
-                stroke={node.color}
-                strokeWidth="1"
-                animate={{
-                  r: isRelated(node.id) ? 7 : 5,
-                  strokeWidth: isRelated(node.id) ? 2 : 1,
-                  fillOpacity: isRelated(node.id) ? 1 : 0.4
-                }}
-              />
-              <text
-                x={node.x}
-                y={node.y + 12}
-                textAnchor="middle"
-                fill={isRelated(node.id) ? '#da251d' : '#a1a1aa'}
-                fontSize="4"
-                fontWeight="900"
-                className="pointer-events-none select-none transition-colors duration-300 uppercase tracking-tight"
+          {nodes.map((node) => {
+            const active = isRelated(node.id);
+            const height = 7;
+            const width = node.width;
+            
+            return (
+              <motion.g
+                key={node.id}
+                onMouseEnter={() => setHoveredNode(node.id)}
+                onMouseLeave={() => setHoveredNode(null)}
+                className="cursor-pointer"
               >
-                {node.label}
-              </text>
-            </motion.g>
-          ))}
+                {/* Nút tròn ở giữa tâm để giữ điểm kết nối */}
+                <circle
+                  cx={node.x}
+                  cy={node.y}
+                  r="1.5"
+                  fill={active ? '#da251d' : node.color}
+                  className="pointer-events-none"
+                />
+
+                {/* Thẻ nền (Card background) để che đường kẻ bên dưới */}
+                <motion.rect
+                  x={node.x - width / 2}
+                  y={node.y - height / 2}
+                  width={width}
+                  height={height}
+                  rx="1.5"
+                  ry="1.5"
+                  fill="white"
+                  stroke={active ? '#da251d' : node.color}
+                  strokeWidth={active ? 0.6 : 0.4}
+                  animate={{
+                    scale: active ? 1.05 : 1,
+                    strokeWidth: active ? 0.8 : 0.4,
+                  }}
+                  className="shadow-sm transition-all duration-300"
+                  style={{ transformOrigin: `${node.x}px ${node.y}px` }}
+                />
+                
+                {/* Chữ hiển thị ở giữa card */}
+                <text
+                  x={node.x}
+                  y={node.y}
+                  dy="0.8"
+                  textAnchor="middle"
+                  fill={active ? '#da251d' : '#27272a'}
+                  fontSize="2.2"
+                  fontWeight="900"
+                  className="pointer-events-none select-none uppercase tracking-wider"
+                >
+                  {node.label}
+                </text>
+              </motion.g>
+            );
+          })}
         </svg>
       </motion.div>
     </section>

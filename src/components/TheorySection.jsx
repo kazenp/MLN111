@@ -29,15 +29,15 @@ const TheorySection = () => {
   return (
     <section className="py-24 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight">Tồn Tại Xã Hội (Đời Sống Vật Chất)</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-soviet-red mb-6 tracking-tight">Tồn Tại Xã Hội (Đời Sống Vật Chất)</h2>
           <p className="text-zinc-600 max-w-3xl mx-auto text-lg leading-relaxed">
-            Tồn tại xã hội là toàn bộ sinh hoạt vật chất và các điều kiện sinh hoạt vật chất của xã hội. Theo Marx, đây chính là **"đời sống thực tế"** quyết định tư duy, nhận thức và ý thức tinh thần của con người.
+            Tồn tại xã hội là toàn bộ sinh hoạt vật chất và các điều kiện sinh hoạt vật chất của xã hội. Theo Marx, đây chính là "đời sống thực tế" quyết định tư duy, nhận thức và ý thức tinh thần của con người.
           </p>
         </motion.div>
 

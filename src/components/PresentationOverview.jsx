@@ -58,12 +58,12 @@ const PresentationOverview = () => {
             animate={{ opacity: 1, x: 0 }}
             className="space-y-8"
           >
-              <h3 className="text-2xl font-bold flex items-center gap-4 uppercase tracking-widest text-soviet-red">
+            <h3 className="text-2xl font-bold flex items-center gap-4 uppercase tracking-widest text-soviet-red">
               <Users className="w-8 h-8" /> Thành viên thực hiện
             </h3>
             <div className="space-y-4">
               {members.map((member) => (
-                <div 
+                <div
                   key={member.id}
                   className="p-6 bg-white border-2 border-zinc-100 border-l-soviet-red hover:border-soviet-red transition-all flex justify-between items-center group shadow-sm hover:shadow-md"
                 >
@@ -80,7 +80,7 @@ const PresentationOverview = () => {
             animate={{ opacity: 1, x: 0 }}
             className="space-y-8"
           >
-              <h3 className="text-2xl font-bold flex items-center gap-4 uppercase tracking-widest text-soviet-red">
+            <h3 className="text-2xl font-bold flex items-center gap-4 uppercase tracking-widest text-soviet-red">
               <ListOrdered className="w-8 h-8" /> Nội dung bài học
             </h3>
             <div className="space-y-6">
@@ -111,11 +111,11 @@ const PresentationOverview = () => {
           <div className="absolute top-0 right-0 p-8 opacity-5">
             <Cpu className="w-32 h-32" />
           </div>
-          
+
           <h3 className="text-2xl font-bold text-center uppercase tracking-widest text-zinc-400 mb-12">
             Phụ lục: Cách triển khai nội dung
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {tools.map((tool) => (
               <div key={tool.name} className="flex flex-col items-center group text-center">

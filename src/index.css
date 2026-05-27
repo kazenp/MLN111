@@ -39,3 +39,25 @@
 ::-webkit-scrollbar-thumb {
   @apply bg-zinc-300 rounded-full hover:bg-soviet-red/50;
 }
+
+/* YouTube Player Iframe Full-bleed styling */
+#youtube-player {
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+}
+
+/* Fullscreen API overrides */
+:-webkit-full-screen {
+  background-color: black !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+:fullscreen {
+  background-color: black !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+

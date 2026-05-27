@@ -4,13 +4,13 @@ import { Club, Heart, Spade, Diamond, RefreshCcw, Hand, Trophy, TriangleAlert, C
 import { Link } from 'react-router-dom';
 
 const SUITS = [
-  { name: 'Spades', icon: <Spade className="w-6 h-6" />, color: 'text-zinc-900' },
-  { name: 'Hearts', icon: <Heart className="w-6 h-6" />, color: 'text-soviet-red' },
-  { name: 'Clubs', icon: <Club className="w-6 h-6" />, color: 'text-zinc-900' },
-  { name: 'Diamonds', icon: <Diamond className="w-6 h-6" />, color: 'text-soviet-red' },
+  { name: 'Spades', icon: <Spade className="w-5 h-5" />, color: 'text-zinc-900', rawColor: '#18181b' },
+  { name: 'Hearts', icon: <Heart className="w-5 h-5 fill-current" />, color: 'text-red-600', rawColor: '#dc2626' },
+  { name: 'Clubs', icon: <Club className="w-5 h-5 fill-current" />, color: 'text-zinc-900', rawColor: '#18181b' },
+  { name: 'Diamonds', icon: <Diamond className="w-5 h-5 fill-current" />, color: 'text-red-600', rawColor: '#dc2626' },
 ];
 
-const VALUES = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+const VALUES = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
 const QUESTIONS = [
   {
@@ -243,432 +243,505 @@ const QUESTIONS = [
     ],
     correct: 1,
     desc: "Tôn giáo phản ánh thế giới khách quan một cách hoang đường, hư ảo, gửi gắm niềm tin của con người vào thế giới siêu nhiên thần thánh."
-  },
-  {
-    q: "Hệ thống tri thức chân thực dưới dạng khái niệm, định luật, học thuyết được thực nghiệm chứng minh thuộc về:",
-    options: [
-      "Ý thức khoa học",
-      "Ý thức tôn giáo",
-      "Ý thức pháp quyền",
-      "Ý thức chính trị"
-    ],
-    correct: 0,
-    desc: "Ý thức khoa học phản ánh thế giới dưới dạng các tri thức khách quan, hệ thống và được chứng minh bằng các phương pháp nghiên cứu, thực nghiệm."
-  },
-  {
-    q: "Tính kế thừa của ý thức xã hội có nghĩa là:",
-    options: [
-      "Giai đoạn sau bê nguyên xi ý thức của giai đoạn trước mà không thay đổi",
-      "Giai đoạn sau tiếp thu, lọc bỏ và phát triển những giá trị tư tưởng từ thời kỳ trước",
-      "Ý thức xã hội được thừa kế các di sản vật chất như nhà xưởng, đất đai",
-      "Mỗi thời kỳ lịch sử phát triển tư tưởng hoàn toàn độc lập, cắt rời nhau"
-    ],
-    correct: 1,
-    desc: "Tính kế thừa thể hiện ở chỗ sự phát triển tư tưởng của một thời kỳ luôn dựa trên cơ sở tiếp thu có chọn lọc các thành tựu tư tưởng của quá khứ."
-  },
-  {
-    q: "Ý nghĩa phương pháp luận lớn nhất của mối quan hệ biện chứng này trong thực tiễn là gì?",
-    options: [
-      "Chỉ cần tập trung cải tạo tư tưởng tinh thần của con người",
-      "Muốn cải tạo ý thức xã hội, thay đổi tư tưởng cũ phải bắt đầu từ cải tạo tồn tại xã hội (đời sống vật chất, kinh tế)",
-      "Không cần quan tâm đến giáo dục tư tưởng vì kinh tế tự quyết định",
-      "Tập trung đầu tư hoàn toàn vào môi trường tự nhiên"
-    ],
-    correct: 1,
-    desc: "Muốn thay đổi ý thức xã hội một cách căn bản phải thay đổi tồn tại xã hội sinh ra nó trước tiên (tức đời sống vật chất, phương thức sản xuất)."
-  },
-  {
-    q: "Quan điểm cho rằng ý thức xã hội hoàn toàn độc lập và quyết định tồn tại xã hội là lập trường của:",
-    options: [
-      "Chủ nghĩa duy vật lịch sử",
-      "Chủ nghĩa duy tâm lịch sử",
-      "Chủ nghĩa duy vật biện chứng",
-      "Chủ nghĩa duy vật tầm thường"
-    ],
-    correct: 1,
-    desc: "Chủ nghĩa duy tâm lịch sử coi tư tưởng, ý thức xã hội hoặc ý chí của những nhân vật xuất chúng là lực lượng quyết định lịch sử."
-  },
-  {
-    q: "Sai lầm của chủ nghĩa duy vật tầm thường khi xem xét quan hệ này là gì?",
-    options: [
-      "Tuyệt đối hóa đời sống tinh thần",
-      "Tuyệt đối hóa tồn tại xã hội, coi nhẹ tính độc lập tương đối và sự tác động trở lại của ý thức",
-      "Coi ý thức là sản phẩm của thần linh",
-      "Coi trọng quá mức công tác giáo dục văn hóa tinh thần"
-    ],
-    correct: 1,
-    desc: "Chủ nghĩa duy vật tầm thường chỉ thấy tồn tại xã hội quyết định một chiều mà bỏ qua tính độc lập tương đối và vai trò thúc đẩy của ý thức cách mạng."
-  },
-  {
-    q: "Hình thái ý thức triết học đóng vai trò gì đối với các hình thái ý thức khác?",
-    options: [
-      "Cung cấp các hình tượng nghệ thuật độc đáo",
-      "Cung cấp thế giới quan và phương pháp luận chung nhất để định hướng nhận thức",
-      "Quy định luật lệ xử phạt hành chính",
-      "Thiết lập giáo lý thờ cúng tâm linh"
-    ],
-    correct: 1,
-    desc: "Ý thức triết học phản ánh hiện thực một cách khái quát nhất, cung cấp thế giới quan và phương pháp luận định hướng cho khoa học, đạo đức, chính trị..."
-  },
-  {
-    q: "Tác động của điều kiện tự nhiên - hoàn cảnh địa lý đối với sự phát triển xã hội là:",
-    options: [
-      "Nhân tố quyết định trực tiếp tiến trình lịch sử",
-      "Điều kiện thường xuyên, tất yếu, ảnh hưởng đến sự sinh tồn và phát triển của xã hội",
-      "Không có bất kỳ vai trò hay ảnh hưởng nào",
-      "Chỉ tác động trong thời kỳ nguyên thủy hoang sơ"
-    ],
-    correct: 1,
-    desc: "Điều kiện tự nhiên là nền tảng không thể thiếu cho đời sống con người, nhưng nó chỉ đóng vai trò ảnh hưởng chứ không quyết định trực tiếp xã hội."
-  },
-  {
-    q: "Sự biến đổi của ý thức xã hội xét đến cùng bắt nguồn từ biến đổi của:",
-    options: [
-      "Nghị quyết của các đảng phái chính trị",
-      "Sự phát triển của lực lượng sản xuất và phương thức sản xuất vật chất",
-      "Hệ thống khí hậu thời tiết tự nhiên",
-      "Ý chí chủ quan của các nhà khoa học vĩ đại"
-    ],
-    correct: 1,
-    desc: "Xét đến cùng, mọi sự thay đổi trong đời sống tinh thần đều phản ánh những biến đổi sâu xa trong phương thức sản xuất của cải vật chất của xã hội."
-  },
-  {
-    q: "Để xây dựng nền văn hóa Việt Nam tiên tiến, đậm đà bản sắc dân tộc, chúng ta cần:",
-    options: [
-      "Loại bỏ hoàn toàn các giá trị tư tưởng cũ trong lịch sử",
-      "Kế thừa các giá trị tinh thần tốt đẹp, kết hợp tiếp thu tinh hoa nhân loại và cải tạo tư tưởng cũ lỗi thời",
-      "Sao chép nguyên bản mô hình văn hóa nước ngoài",
-      "Đóng cửa hoàn toàn để bảo vệ tư tưởng truyền thống"
-    ],
-    correct: 1,
-    desc: "Xây dựng văn hóa mới đòi hỏi kế thừa có chọn lọc di sản tinh thần dân tộc đồng thời tiếp thu khoa học, văn hóa tiến bộ của thế giới."
   }
 ];
 
-const Card = ({ card, hidden }) => (
-  <motion.div
-    initial={{ scale: 0, rotateY: 180 }}
-    animate={{ scale: 1, rotateY: hidden ? 180 : 0 }}
-    className={`w-24 h-36 bg-white rounded-xl border-2 border-zinc-200 shadow-lg flex flex-col items-center justify-center relative overflow-hidden ${hidden ? 'bg-soviet-red shadow-[0_0_20px_rgba(220,38,38,0.3)]' : ''}`}
-  >
-    {hidden ? (
-      <div className="w-full h-full flex items-center justify-center bg-soviet-red">
-        <div className="w-12 h-20 border-2 border-white/20 rounded-lg flex items-center justify-center text-white/20 font-black text-2xl italic">?</div>
+// Helper to get combinations of 5 out of 7 cards
+const getCombinations = (array, k) => {
+  const result = [];
+  const f = (active, rest) => {
+    if (active.length === k) {
+      result.push(active);
+      return;
+    }
+    for (let i = 0; i < rest.length; i++) {
+      f([...active, rest[i]], rest.slice(i + 1));
+    }
+  };
+  f([], array);
+  return result;
+};
+
+// Evaluate a 5-card Poker Hand
+const evaluate5CardHand = (hand) => {
+  const valMap = { '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14 };
+  const ranks = hand.map(c => valMap[c.value]).sort((a, b) => b - a);
+  const suits = hand.map(c => c.suit);
+
+  const isFlush = suits.every(s => s === suits[0]);
+
+  // Check straight
+  let isStraight = false;
+  const uniqueRanks = [...new Set(ranks)];
+  if (uniqueRanks.length === 5) {
+    if (ranks[0] - ranks[4] === 4) {
+      isStraight = true;
+    } else if (ranks[0] === 14 && ranks[1] === 5 && ranks[2] === 4 && ranks[3] === 3 && ranks[4] === 2) {
+      isStraight = true;
+    }
+  }
+
+  // Count frequencies
+  const counts = {};
+  ranks.forEach(r => { counts[r] = (counts[r] || 0) + 1; });
+  const freqs = Object.values(counts).sort((a, b) => b - a);
+  const freqKeys = Object.keys(counts).map(Number).sort((a, b) => {
+    if (counts[b] !== counts[a]) {
+      return counts[b] - counts[a];
+    }
+    return b - a;
+  });
+
+  let handType = 'Mậu Thầu';
+  let typeScore = 0;
+
+  if (isFlush && isStraight) {
+    if (ranks[0] === 14 && ranks[4] === 10) {
+      handType = 'Thùng Phá Sảnh Lớn (Royal Flush)';
+      typeScore = 9;
+    } else {
+      handType = 'Thùng Phá Sảnh (Straight Flush)';
+      typeScore = 8;
+    }
+  } else if (freqs[0] === 4) {
+    handType = 'Tứ Quý (Four of a Kind)';
+    typeScore = 7;
+  } else if (freqs[0] === 3 && freqs[1] === 2) {
+    handType = 'Cù Lũ (Full House)';
+    typeScore = 6;
+  } else if (isFlush) {
+    handType = 'Thùng (Flush)';
+    typeScore = 5;
+  } else if (isStraight) {
+    handType = 'Sảnh (Straight)';
+    typeScore = 4;
+  } else if (freqs[0] === 3) {
+    handType = 'Sám Cô (Three of a Kind)';
+    typeScore = 3;
+  } else if (freqs[0] === 2 && freqs[1] === 2) {
+    handType = 'Thú (Two Pair)';
+    typeScore = 2;
+  } else if (freqs[0] === 2) {
+    handType = 'Đôi (One Pair)';
+    typeScore = 1;
+  } else {
+    handType = 'Mậu Thầu (High Card)';
+    typeScore = 0;
+  }
+
+  // Calculate detailed numeric score for tiebreaks
+  let tieBreakerRanks = [...freqKeys];
+  if (isStraight && ranks[0] === 14 && ranks[1] === 5) {
+    // Wheel straight: rank should be evaluated as 5, 4, 3, 2, 1
+    tieBreakerRanks = [5, 4, 3, 2, 1];
+  }
+
+  let scoreValue = typeScore * 1000000;
+  let multiplier = 10000;
+  for (let i = 0; i < tieBreakerRanks.length; i++) {
+    scoreValue += tieBreakerRanks[i] * multiplier;
+    multiplier /= 15;
+  }
+
+  return {
+    handType,
+    scoreValue,
+    ranks: tieBreakerRanks,
+    cards: hand
+  };
+};
+
+const evaluate7CardHand = (sevenCards) => {
+  const combinations = getCombinations(sevenCards, 5);
+  let bestHand = null;
+  for (const combo of combinations) {
+    const evalResult = evaluate5CardHand(combo);
+    if (!bestHand || evalResult.scoreValue > bestHand.scoreValue) {
+      bestHand = evalResult;
+    }
+  }
+  return bestHand;
+};
+
+// Card component representation
+const Card = ({ card, hidden }) => {
+  if (hidden) {
+    return (
+      <div className="w-16 h-24 md:w-20 md:h-30 rounded-xl bg-gradient-to-br from-soviet-red to-red-800 border-2 border-white/20 shadow-lg flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-1.5 border border-white/10 rounded-lg flex items-center justify-center">
+          <div className="text-white/20 font-black text-2xl">★</div>
+        </div>
       </div>
-    ) : (
-      <>
-        <div className={`absolute top-2 left-2 font-black text-lg ${card.suit.color}`}>{card.value}</div>
-        <div className={`${card.suit.color} scale-125`}>{card.suit.icon}</div>
-        <div className={`absolute bottom-2 right-2 font-black text-lg rotate-180 ${card.suit.color}`}>{card.value}</div>
-      </>
-    )}
-  </motion.div>
-);
+    );
+  }
+
+  const suitObj = SUITS.find(s => s.name === card.suit);
+  return (
+    <motion.div
+      initial={{ scale: 0.8, rotateY: 180, opacity: 0 }}
+      animate={{ scale: 1, rotateY: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="w-16 h-24 md:w-20 md:h-30 rounded-xl bg-white border border-zinc-200 shadow-md flex flex-col justify-between p-2 text-zinc-900 relative"
+    >
+      <div className="flex flex-col items-start leading-none">
+        <span className="text-sm md:text-base font-black">{card.value}</span>
+        <span className={suitObj.color}>{suitObj.icon}</span>
+      </div>
+      <div className={`absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none scale-150`}>
+        {suitObj.icon}
+      </div>
+      <div className="flex flex-col items-end leading-none rotate-180 self-end">
+        <span className="text-sm md:text-base font-black">{card.value}</span>
+        <span className={suitObj.color}>{suitObj.icon}</span>
+      </div>
+    </motion.div>
+  );
+};
 
 const CardGame = () => {
-  const [deck, setDeck] = useState([]);
+  // Game state variables
+  const [playerChips, setPlayerChips] = useState(500);
+  const [botChips, setBotChips] = useState(500);
+  const [pot, setPot] = useState(0);
+  
   const [playerHand, setPlayerHand] = useState([]);
-  const [dealerHand, setDealerHand] = useState([]);
-  const [gameState, setGameState] = useState('betting'); 
-  const [message, setMessage] = useState('Chào mừng đến với trò chơi kiến thức Tồn tại xã hội & Ý thức xã hội!');
-  const [playerScore, setPlayerScore] = useState(0);
-  const [dealerScore, setDealerScore] = useState(0);
+  const [botHand, setBotHand] = useState([]);
+  const [communityCards, setCommunityCards] = useState([]);
+  const [revealedCommunityCount, setRevealedCommunityCount] = useState(0);
+  
+  const [gameState, setGameState] = useState('welcome'); // welcome, betting, preflop, flop, river, showdown, bankrupt_player, bankrupt_bot
+  const [roundMessage, setRoundMessage] = useState('Bắt đầu chơi Poker Texas Hold\'em cùng Karl Marx!');
+  const [botQuote, setBotQuote] = useState('Chào đồng chí! Hãy xem đời sống thực tế quyết định tư duy hay ngược lại trên bàn Poker này nhé.');
   
   const [showQuiz, setShowQuiz] = useState(false);
   const [currentQuiz, setCurrentQuiz] = useState(null);
-  const [quizFeedback, setQuizFeedback] = useState(null);
-  const [wrongAnswers, setWrongAnswers] = useState(0);
-  const [showResultOverlay, setShowResultOverlay] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [quizFeedback, setQuizFeedback] = useState(null); // null, correct, incorrect
+  const [penaltyCost, setPenaltyCost] = useState(0);
 
-  const isXiBan = (hand) => hand.length === 2 && hand.every(c => c.value === 'A');
-  const isXiDach = (hand) => hand.length === 2 && hand.some(c => c.value === 'A') && hand.some(c => ['10', 'J', 'Q', 'K'].includes(c.value));
-
-  const calculateScore = (hand) => {
-    if (!hand || hand.length === 0) return 0;
-    let score = 0;
-    let aces = 0;
-    for (let card of hand) {
-      if (card.value === 'A') {
-        aces += 1;
-        score += 11;
-      } else if (['J', 'Q', 'K'].includes(card.value)) {
-        score += 10;
-      } else {
-        score += parseInt(card.value);
-      }
-    }
-    while (score > 21 && aces > 0) {
-      score -= 10;
-      aces -= 1;
-    }
-    return score;
+  // Initialize a shuffled deck
+  const generateDeck = () => {
+    const deck = [];
+    SUITS.forEach(suit => {
+      VALUES.forEach(value => {
+        deck.push({ suit: suit.name, value });
+      });
+    });
+    return deck;
   };
 
-  const createDeck = () => {
-    const newDeck = [];
-    for (let suit of SUITS) {
-      for (let value of VALUES) {
-        newDeck.push({ suit, value });
-      }
+  const shuffle = (deck) => {
+    const newDeck = [...deck];
+    for (let i = newDeck.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newDeck[i], newDeck[j]] = [newDeck[j], newDeck[i]];
     }
-    return newDeck.sort(() => Math.random() - 0.5);
+    return newDeck;
   };
 
-  const startGame = () => {
-    const newDeck = createDeck();
-    const pHand = [newDeck.pop(), newDeck.pop()];
-    const dHand = [newDeck.pop(), newDeck.pop()];
+  // Start new round
+  const startNewRound = () => {
+    if (playerChips < 20) {
+      setGameState('bankrupt_player');
+      return;
+    }
+    if (botChips < 20) {
+      setGameState('bankrupt_bot');
+      return;
+    }
+
+    const deck = shuffle(generateDeck());
     
-    setDeck(newDeck);
+    // Deal hands
+    const pHand = [deck[0], deck[1]];
+    const bHand = [deck[2], deck[3]];
+    const comm = [deck[4], deck[5], deck[6], deck[7], deck[8]];
+
     setPlayerHand(pHand);
-    setDealerHand(dHand);
-    setPlayerScore(calculateScore(pHand));
-    setDealerScore(calculateScore(dHand));
-    setWrongAnswers(0);
-    setShowResultOverlay(false);
+    setBotHand(bHand);
+    setCommunityCards(comm);
+    setRevealedCommunityCount(0);
 
-    // Check Special Hands Immediately
-    const playerXB = isXiBan(pHand);
-    const playerXD = isXiDach(pHand);
-    const dealerXB = isXiBan(dHand);
-    const dealerXD = isXiDach(dHand);
+    // Blinds posting (SB 10, BB 20)
+    setPlayerChips(prev => prev - 10);
+    setBotChips(prev => prev - 20);
+    setPot(30);
 
-    if (playerXB || playerXD || dealerXB || dealerXD) {
-      setGameState('finished');
-      setShowResultOverlay(true);
-      if (playerXB && !dealerXB) setMessage("XÌ BÀN! Bạn thắng tuyệt đối!");
-      else if (dealerXB && !playerXB) setMessage("NHÀ CÁI XÌ BÀN! Bạn đã thua.");
-      else if (playerXD && !dealerXD && !dealerXB) setMessage("XÌ DÁCH! Bạn thắng ngay lập tức!");
-      else if (dealerXD && !playerXD && !playerXB) setMessage("NHÀ CÁI XÌ DÁCH! Bạn đã thua.");
-      else setMessage("Cả hai cùng có bộ bài đặc biệt! Hòa bài (Push)!");
-    } else {
-      setGameState('playing');
-      setMessage('Muốn rút bài? Hãy trả lời đúng câu hỏi về tồn tại xã hội và ý thức xã hội!');
-    }
-    setQuizFeedback(null);
+    setGameState('preflop');
+    setRoundMessage('Ván bài bắt đầu! Hãy trả lời câu hỏi để lật xem bài tẩy của bạn.');
+    setBotQuote('Hãy để ý thức xã hội bắt đầu phân tích những lá bài tẩy!');
+    triggerQuiz(15); // Trigger Quiz for Preflop
   };
 
-  const requestHit = () => {
-    if (gameState !== 'playing') return;
-    const randomQuiz = QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
-    setCurrentQuiz(randomQuiz);
+  // Reset entire game
+  const resetGame = () => {
+    setPlayerChips(500);
+    setBotChips(500);
+    setPot(0);
+    setPlayerHand([]);
+    setBotHand([]);
+    setCommunityCards([]);
+    setRevealedCommunityCount(0);
+    setGameState('betting');
+    setRoundMessage('Sẵn sàng cho một trận đấu Poker tư duy mới!');
+    setBotQuote('Đồng chí đã sẵn sàng thử thách tri thức triết học của mình chưa?');
+  };
+
+  // Trigger Quiz Modal
+  const triggerQuiz = (penalty) => {
+    const randomIndex = Math.floor(Math.random() * QUESTIONS.length);
+    setCurrentQuiz(QUESTIONS[randomIndex]);
+    setSelectedOption(null);
     setQuizFeedback(null);
+    setPenaltyCost(penalty);
     setShowQuiz(true);
   };
 
-  const handleQuizAnswer = (index) => {
-    if (index === currentQuiz.correct) {
+  // Handle option click in Quiz
+  const handleQuizAnswer = (optionIdx) => {
+    setSelectedOption(optionIdx);
+    if (optionIdx === currentQuiz.correct) {
       setQuizFeedback('correct');
-      // Không tự động đóng, để người chơi đọc giải thích
     } else {
       setQuizFeedback('incorrect');
-      setWrongAnswers(prev => prev + 1);
     }
   };
 
-  const closeQuiz = () => {
-    if (quizFeedback === 'correct') {
-      executeHit();
-    } else if (quizFeedback === 'incorrect') {
-      if (wrongAnswers >= 3) {
-        setGameState('finished');
-        setShowResultOverlay(true);
-        setMessage("BẠN ĐÃ THUA! Sai 3 câu hỏi, bạn không đủ trình độ để tiếp tục cuộc chơi!");
-      } else {
-        setMessage(`Sai rồi! Bạn không được rút bài lượt này. (Sai ${wrongAnswers}/3 câu)`);
-      }
-    }
+  // Progress after Quiz closes
+  const handleQuizResultClose = () => {
     setShowQuiz(false);
-    setQuizFeedback(null);
-  };
 
-  const executeHit = () => {
-    const newDeck = [...deck];
-    if (newDeck.length === 0) return;
-    const newCard = newDeck.pop();
-    const newHand = [...playerHand, newCard];
-    setDeck(newDeck);
-    setPlayerHand(newHand);
-    const score = calculateScore(newHand);
-    setPlayerScore(score);
-
-    if (score > 21) {
-      setGameState('finished');
-      setShowResultOverlay(true);
-      setMessage('Quá 21 điểm! Bạn đã thua.');
+    if (quizFeedback === 'correct') {
+      // Free action: proceed to normal choice
+      setRoundMessage('Xuất sắc! Câu trả lời chính xác giúp bạn có đầy đủ các quyền cược.');
+      setBotQuote('Tư duy lý luận của đồng chí rất tốt! Hãy đưa ra nước đi đi.');
     } else {
-      setMessage("Trả lời đúng! Bạn đã nhận được một lá bài.");
+      // Penalty action: forced call with penalty or fold
+      const checkPenaltyAmount = Math.min(penaltyCost, playerChips);
+      setPlayerChips(prev => prev - checkPenaltyAmount);
+      setPot(prev => prev + checkPenaltyAmount);
+
+      setRoundMessage(`Sai rồi! Bạn bị phạt cược ${checkPenaltyAmount} chips để tiếp tục ở lại ván đấu.`);
+      setBotQuote('Ý thức lệch lạc so với thực tế sẽ dẫn tới hao tổn vật chất. Thật đáng tiếc!');
+      
+      // Auto-progress stages if they are penalized, or they can choose to fold
+      progressGameStage('call');
     }
   };
 
-  const stand = () => {
-    if (gameState !== 'playing') return;
-    setGameState('dealerTurn');
-    setMessage('Lượt của Nhà cái...');
+  // User Actions during normal Correct stages
+  const handlePlayerAction = (action) => {
+    if (action === 'fold') {
+      // Bot takes the pot
+      setBotChips(prev => prev + pot);
+      setRoundMessage('Bạn đã Úp bài (Fold). Karl Marx Bot thắng được hũ Pot!');
+      setBotQuote('Lựa chọn an toàn. Rõ ràng hoàn cảnh vật chất đã làm bạn lùi bước.');
+      setGameState('betting');
+    } else if (action === 'check') {
+      progressGameStage('check');
+    } else if (action === 'call') {
+      const callCost = gameState === 'preflop' ? 10 : 0; // Preflop needs 10 to match BB
+      const actualCost = Math.min(callCost, playerChips);
+      setPlayerChips(prev => prev - actualCost);
+      setPot(prev => prev + actualCost);
+      progressGameStage('call');
+    } else if (action === 'bet') {
+      // Normal Bet amount based on stage
+      const betAmount = gameState === 'flop' ? 20 : 40;
+      const actualPlayerBet = Math.min(betAmount, playerChips);
+      const actualBotBet = Math.min(betAmount, botChips);
+      
+      setPlayerChips(prev => prev - actualPlayerBet);
+      setBotChips(prev => prev - actualBotBet);
+      setPot(prev => prev + actualPlayerBet + actualBotBet);
+      progressGameStage('bet');
+    }
   };
 
-  useEffect(() => {
-    if (gameState === 'dealerTurn') {
-      const timer = setTimeout(() => {
-        const dScore = calculateScore(dealerHand);
-        const pScore = calculateScore(playerHand);
-        
-        // Logic Nhà cái thông minh & may mắn hơn:
-        // 1. Rút nếu dưới 17 (bắt buộc)
-        // 2. Rút nếu vẫn thua điểm người chơi và người chơi chưa quắc (đến ngưỡng 19 điểm)
-        const shouldHit = dScore < 17 || (dScore < pScore && pScore <= 21 && dScore < 19);
-
-        if (shouldHit) {
-          let newDeck = [...deck];
-          if (newDeck.length === 0) return;
-          
-          let nextCard = newDeck[newDeck.length - 1];
-          
-          // Nếu rút quân tiếp theo bị quắc, có 40% cơ hội tráo sang lá an toàn hơn
-          if (calculateScore([...dealerHand, nextCard]) > 21 && Math.random() < 0.4) {
-            const safeCardIdx = newDeck.findIndex(c => calculateScore([...dealerHand, c]) <= 21);
-            if (safeCardIdx !== -1) {
-              // Tráo quân bài an toàn lên đầu để rút
-              const safeCard = newDeck.splice(safeCardIdx, 1)[0];
-              newDeck.push(safeCard);
-              nextCard = safeCard;
-            }
-          }
-
-          const newCard = newDeck.pop();
-          const nextDealerHand = [...dealerHand, newCard];
-          setDeck(newDeck);
-          setDealerHand(nextDealerHand);
-          setDealerScore(calculateScore(nextDealerHand));
-        } else {
-          setGameState('finished');
-          setShowResultOverlay(true);
-          if (dScore > 21) setMessage('NHÀ CÁI QUẮC! Bạn đã thắng!');
-          else if (pScore > dScore) setMessage('CHÚC MỪNG! Bạn thắng với điểm số cao hơn!');
-          else if (pScore < dScore) setMessage('NHÀ CÁI THẮNG! Bạn đã thua rồi.');
-          else setMessage('Hòa bài (Push)!');
-        }
-      }, 1000);
-      return () => clearTimeout(timer);
+  // Progression of Poker Stages
+  const progressGameStage = (actionTaken) => {
+    if (gameState === 'preflop') {
+      // Transition Preflop -> Flop
+      setRevealedCommunityCount(3);
+      setGameState('flop');
+      setRoundMessage('Vòng Flop: 3 lá bài chung đầu tiên được lật. Trả lời Quiz tiếp theo để đặt cược.');
+      setBotQuote('Thế giới khách quan đã hiện hình 3 phần. Đồng chí đánh giá thế nào?');
+      triggerQuiz(25); // Penalty of 25 for flop
+    } else if (gameState === 'flop') {
+      // Transition Flop -> River (combine Turn & River to make it fast)
+      setRevealedCommunityCount(5);
+      setGameState('river');
+      setRoundMessage('Vòng River: Lật toàn bộ 5 lá bài chung. Hãy trả lời câu hỏi quyết định cho vòng Showdown.');
+      setBotQuote('Toàn bộ 5 lá bài chung đã xuất hiện. Thực tiễn đã hoàn chỉnh!');
+      triggerQuiz(45); // Penalty of 45 for river
+    } else if (gameState === 'river') {
+      // Transition River -> Showdown
+      setGameState('showdown');
+      resolveShowdown();
     }
-  }, [gameState, dealerHand, deck, playerHand]);
+  };
+
+  // Calculate and settle hand rankings at Showdown
+  const resolveShowdown = () => {
+    const playerFullHand = [...playerHand, ...communityCards];
+    const botFullHand = [...botHand, ...communityCards];
+
+    const playerEval = evaluate7CardHand(playerFullHand);
+    const botEval = evaluate7CardHand(botFullHand);
+
+    let showdownMsg = '';
+    if (playerEval.scoreValue > botEval.scoreValue) {
+      // Player wins
+      setPlayerChips(prev => prev + pot);
+      showdownMsg = `Bạn thắng Pot ${pot} với bộ [${playerEval.handType}] vượt qua [${botEval.handType}] của Marx!`;
+      setBotQuote(`Thắng đẹp lắm đồng chí! Quả đúng là lý luận khoa học tiên phong đã đưa bạn tới chiến thắng.`);
+    } else if (playerEval.scoreValue < botEval.scoreValue) {
+      // Bot wins
+      setBotChips(prev => prev + pot);
+      showdownMsg = `Karl Marx thắng Pot ${pot} với bộ [${botEval.handType}] đánh bại [${playerEval.handType}] của bạn.`;
+      setBotQuote(`Tôi đã thắng! Đời sống vật chất của tôi hôm nay có những quân bài tốt hơn. Đừng nản chí!`);
+    } else {
+      // Draw (Split Pot)
+      const halfPot = Math.floor(pot / 2);
+      setPlayerChips(prev => prev + halfPot);
+      setBotChips(prev => prev + (pot - halfPot));
+      showdownMsg = `Hòa! Cả hai cùng có bộ bài [${playerEval.handType}]. Pot được chia đôi.`;
+      setBotQuote(`Biện chứng thật cân bằng! Hai tư duy xuất sắc gặp nhau ở cùng một kết quả.`);
+    }
+
+    setRoundMessage(showdownMsg);
+  };
+
+  // Card formatting info display
+  const getHandRankName = (hand) => {
+    if (hand.length < 2) return '';
+    const fullHand = [...hand, ...communityCards.slice(0, revealedCommunityCount)];
+    if (fullHand.length < 5) return 'Chưa đủ bài';
+    const evalResult = evaluate7CardHand(fullHand);
+    return evalResult.handType;
+  };
 
   return (
-    <section className="min-h-screen bg-zinc-900 pt-32 pb-20 px-6 flex flex-col items-center overflow-x-hidden relative">
-      <AnimatePresence>
-        {showResultOverlay && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm"
-            onClick={() => setShowResultOverlay(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.5, y: 100, rotate: -10 }}
-              animate={{ scale: 1, y: 0, rotate: 0 }}
-              exit={{ scale: 0.5, y: 100, opacity: 0 }}
-              className={`relative max-w-sm w-full p-8 rounded-[3rem] border-4 shadow-[0_0_50px_rgba(0,0,0,0.5)] text-center ${
-                message.includes('Bạn thắng') || message.includes('XÌ BÀN') || message.includes('XÌ DÁCH') || message.includes('Bạn đã thắng')
-                  ? 'bg-soviet-gold border-white text-zinc-900' 
-                  : message.includes('Hòa')
-                  ? 'bg-zinc-600 border-zinc-400 text-white'
-                  : 'bg-soviet-red border-white text-white'
-              }`}
-            >
-              <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-inherit border-4 border-white rounded-full flex items-center justify-center shadow-xl">
-                {message.includes('Bạn thắng') || message.includes('XÌ BÀN') || message.includes('XÌ DÁCH') || message.includes('Bạn đã thắng') ? (
-                  <Trophy className="w-12 h-12" />
-                ) : message.includes('Hòa') ? (
-                  <RefreshCcw className="w-12 h-12" />
-                ) : (
-                  <XCircle className="w-12 h-12" />
-                )}
-              </div>
-              
-              <h3 className="mt-8 text-3xl font-black uppercase italic tracking-tighter leading-tight mb-4">
-                {message.includes('Bạn thắng') || message.includes('XÌ BÀN') || message.includes('XÌ DÁCH') || message.includes('Bạn đã thắng')
-                  ? 'CHIẾN THẮNG!' 
-                  : message.includes('Hòa')
-                  ? 'KẾT QUẢ HÒA'
-                  : 'THẤT BẠI!'}
-              </h3>
-              
-              <p className="font-bold text-lg leading-tight mb-8 opacity-90">
-                {message}
-              </p>
-
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  startGame();
-                }}
-                className={`w-full py-4 rounded-2xl font-black uppercase tracking-widest shadow-lg transition-all hover:scale-105 active:scale-95 ${
-                  message.includes('Bạn thắng') || message.includes('XÌ BÀN') || message.includes('XÌ DÁCH') || message.includes('Bạn đã thắng')
-                    ? 'bg-zinc-900 text-white'
-                    : 'bg-white text-zinc-900'
-                }`}
-              >
-                Chơi ván mới
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <div className="max-w-4xl w-full">
-        <div className="mb-8 flex justify-start">
+    <section className="min-h-screen bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 py-20 px-6 pt-32 text-white flex flex-col items-center select-none overflow-x-hidden">
+      <div className="max-w-5xl w-full">
+        {/* Quay lại */}
+        <div className="mb-6 flex justify-start">
           <Link to="/" className="text-zinc-500 hover:text-white flex items-center gap-2 font-bold uppercase text-xs transition-colors">
             <ArrowLeft className="w-4 h-4" /> Quay về trang chủ
           </Link>
         </div>
 
+        {/* Tiêu đề */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <h2 className="text-[clamp(1.9rem,4.8vw,4.2rem)] font-black text-soviet-red mb-4 uppercase tracking-[-0.04em] italic leading-none whitespace-nowrap">
-            Kiến Thức <span className="text-white">Tồn Tại &amp; Ý Thức Xã Hội</span>
+          <h2 className="text-[clamp(1.8rem,4.5vw,3.5rem)] font-black text-soviet-red uppercase tracking-tight italic leading-none">
+            Poker Tri Thức <span className="text-white">Marxist Texas Hold'em</span>
           </h2>
-          <div className="h-1.5 w-20 bg-soviet-gold mx-auto mb-6 rounded-full" />
-          <p className="text-zinc-400 font-bold uppercase tracking-widest text-sm px-4">{message}</p>
+          <div className="h-1 bg-soviet-gold mx-auto mt-3 mb-4 w-24 rounded-full" />
+          <p className="text-zinc-400 font-bold uppercase tracking-widest text-xs">{roundMessage}</p>
         </motion.div>
 
-        <div className="grid gap-12">
-          {/* Dealer Area */}
-          <div className="space-y-4">
-            <div className="flex justify-between items-center text-white px-4">
-              <span className="font-black uppercase tracking-widest text-xs opacity-50 flex items-center gap-2">
-                <Cpu className="w-4 h-4" /> Nhà cái
-              </span>
-              <span className="font-mono font-bold text-soviet-gold text-xl">
-                {gameState === 'finished' ? dealerScore : (dealerHand.length > 0 ? '??' : '0')}
-              </span>
+        {/* BÀN POKER FELT TABLE */}
+        <div className="w-full bg-gradient-to-b from-emerald-800 to-emerald-950 border-[10px] border-zinc-800 rounded-[5rem] shadow-2xl relative p-6 md:p-8 flex flex-col justify-between gap-8 min-h-[500px]">
+          {/* Đường vẽ bàn poker viền trong */}
+          <div className="absolute inset-4 border-2 border-white/5 rounded-[4.5rem] pointer-events-none" />
+
+          {/* DEALER AREA (Karl Marx Bot) */}
+          <div className="flex flex-col items-center gap-3 relative z-10">
+            <div className="flex items-center gap-4 bg-black/40 px-6 py-2.5 rounded-full border border-white/10 shadow-lg">
+              {/* Marx Avatar */}
+              <div className="w-10 h-10 rounded-full bg-zinc-700 border-2 border-soviet-gold overflow-hidden flex items-center justify-center font-black text-white text-lg">
+                KM
+              </div>
+              <div className="text-left">
+                <span className="font-black text-xs uppercase text-zinc-400 tracking-wider flex items-center gap-1.5">
+                  <Cpu className="w-3.5 h-3.5 text-soviet-gold" /> Đối thủ: Karl Marx
+                </span>
+                <span className="font-mono text-sm font-bold text-soviet-gold block">{botChips} 🪙</span>
+              </div>
             </div>
-            <div className="flex justify-center gap-4 flex-wrap min-h-[160px] p-8 bg-black/40 rounded-[2rem] border-2 border-dashed border-white/5">
-              {dealerHand.map((card, i) => (
-                <Card key={`dealer-${i}`} card={card} hidden={i === 1 && gameState === 'playing'} />
+
+            {/* Speach bubble */}
+            {botQuote && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="max-w-md bg-white text-zinc-900 px-4 py-2.5 rounded-2xl relative shadow-xl text-xs md:text-sm font-bold text-center border-2 border-soviet-gold"
+              >
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white" />
+                "{botQuote}"
+              </motion.div>
+            )}
+
+            {/* Bot Cards */}
+            <div className="flex gap-2.5 mt-2">
+              {botHand.map((card, i) => (
+                <Card 
+                  key={`bot-${i}`} 
+                  card={card} 
+                  hidden={gameState !== 'showdown'} 
+                />
               ))}
             </div>
           </div>
 
-          {/* Player Area */}
-          <div className="space-y-4">
-            <div className="flex justify-between items-center text-white px-4">
-              <div className="flex flex-col">
-                <span className="font-black uppercase tracking-widest text-xs opacity-50 flex items-center gap-2">
-                  <Hand className="w-4 h-4" /> Bạn
-                </span>
-                {wrongAnswers > 0 && (
-                  <span className="text-[10px] text-red-500 font-bold uppercase tracking-tighter mt-1">
-                    Lỗi: {wrongAnswers}/3
-                  </span>
-                )}
-              </div>
-              <span className="font-mono font-bold text-soviet-red text-xl">{playerScore}</span>
+          {/* COMMUNITY CARDS AREA (Center of felt table) */}
+          <div className="flex flex-col items-center justify-center py-4 relative z-10">
+            {/* POT */}
+            <div className="bg-black/60 px-5 py-2 rounded-full border border-soviet-gold/40 text-center mb-4 shadow-md">
+              <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 block">Tổng tiền cược (Pot)</span>
+              <span className="text-xl font-mono font-black text-soviet-gold">{pot} 🪙</span>
             </div>
-            <div className="flex justify-center gap-4 flex-wrap min-h-[160px] p-8 bg-black/40 rounded-[2rem] border-2 border-soviet-red/10 shadow-[0_0_50px_rgba(220,38,38,0.05)]">
+
+            {/* 5 Community Cards Grid */}
+            <div className="flex gap-2 md:gap-3 bg-black/30 p-4 rounded-2xl border border-white/5 shadow-inner">
+              {Array.from({ length: 5 }).map((_, idx) => {
+                const card = communityCards[idx];
+                const isRevealed = idx < revealedCommunityCount;
+
+                if (card && isRevealed) {
+                  return <Card key={`comm-${idx}`} card={card} />;
+                }
+
+                return (
+                  <div 
+                    key={`empty-comm-${idx}`} 
+                    className="w-16 h-24 md:w-20 md:h-30 rounded-xl border-2 border-dashed border-white/10 flex items-center justify-center text-zinc-600 bg-black/10"
+                  >
+                    <span className="text-xs uppercase font-bold tracking-tighter opacity-30">
+                      {idx === 3 ? 'Turn' : idx === 4 ? 'River' : 'Flop'}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* PLAYER AREA (Bottom of felt table) */}
+          <div className="flex flex-col items-center gap-3 relative z-10">
+            {/* Player Info */}
+            <div className="flex items-center gap-4 bg-black/40 px-6 py-2.5 rounded-full border border-white/10 shadow-lg">
+              <div className="text-right">
+                <span className="font-black text-xs uppercase text-zinc-400 tracking-wider block">Tài khoản của bạn</span>
+                <span className="font-mono text-sm font-bold text-soviet-red block">{playerChips} 🪙</span>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-soviet-red border-2 border-white overflow-hidden flex items-center justify-center font-black text-white text-lg">
+                U
+              </div>
+            </div>
+
+            {/* Hand Ranking Name */}
+            {gameState !== 'welcome' && gameState !== 'betting' && (
+              <span className="text-xs font-black uppercase tracking-widest text-zinc-300">
+                Bài của bạn: <span className="text-soviet-gold">{getHandRankName(playerHand)}</span>
+              </span>
+            )}
+
+            {/* Player cards */}
+            <div className="flex gap-2.5">
               {playerHand.map((card, i) => (
                 <Card key={`player-${i}`} card={card} />
               ))}
@@ -676,64 +749,102 @@ const CardGame = () => {
           </div>
         </div>
 
-        {/* Controls */}
-        <div className="mt-16 flex flex-wrap justify-center gap-6">
-          {gameState === 'betting' && (
+        {/* BOTTOM ACTION BUTTONS */}
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          {gameState === 'welcome' && (
             <button
-              onClick={startGame}
-              className="px-12 py-5 bg-soviet-red text-white font-black uppercase tracking-[0.2em] rounded-full shadow-2xl hover:bg-red-700 transition-all hover:scale-105 active:scale-95"
+              onClick={resetGame}
+              className="px-10 py-4 bg-soviet-red text-white font-black uppercase tracking-widest rounded-full shadow-lg hover:bg-red-700 transition-all hover:scale-105 active:scale-95"
             >
-              Bắt đầu ván bài
+              Vào bàn cược
             </button>
           )}
 
-          {gameState === 'playing' && (
-            <>
-              <button
-                onClick={requestHit}
-                className="px-10 py-4 bg-white text-zinc-900 font-black uppercase tracking-widest rounded-full hover:bg-zinc-100 transition-all shadow-xl flex items-center gap-3"
-              >
-                <HelpCircle className="w-5 h-5 text-soviet-red" /> Rút bài (Trả lời Quiz)
-              </button>
-              <button
-                onClick={stand}
-                className="px-10 py-4 bg-soviet-red text-white font-black uppercase tracking-widest rounded-full hover:bg-red-700 transition-all shadow-xl flex items-center gap-3"
-              >
-                <Hand className="w-5 h-5" /> Dừng
-              </button>
-            </>
+          {gameState === 'betting' && (
+            <button
+              onClick={startNewRound}
+              className="px-12 py-4 bg-soviet-red text-white font-black uppercase tracking-[0.2em] rounded-full shadow-lg hover:bg-red-700 transition-all hover:scale-105 active:scale-95"
+            >
+              Chia bài cược mới
+            </button>
           )}
 
-          {gameState === 'finished' && (
-            <div className="flex flex-col items-center gap-8 w-full">
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                className={`text-xl md:text-3xl font-black uppercase tracking-tighter p-6 rounded-3xl border-2 text-center ${
-                  message.includes('Bạn thắng') || message.includes('XÌ BÀN') || message.includes('XÌ DÁCH') || message.includes('Bạn đã thắng') 
-                    ? 'bg-soviet-gold/10 text-soviet-gold border-soviet-gold/20' 
-                    : message.includes('Hòa') 
-                    ? 'bg-zinc-500/10 text-zinc-400 border-zinc-500/20' 
-                    : 'bg-red-500/10 text-red-500 border-red-500/20'
-                }`}
-              >
-                {message.includes('Bạn thắng') || message.includes('XÌ BÀN') || message.includes('XÌ DÁCH') || message.includes('Bạn đã thắng') 
-                  ? <Trophy className="inline w-8 h-8 mr-3 mb-1" /> 
-                  : <TriangleAlert className="inline w-8 h-8 mr-3 mb-1" />}
-                {message}
-              </motion.div>
+          {(gameState === 'preflop' || gameState === 'flop' || gameState === 'river') && !showQuiz && (
+            <div className="flex flex-wrap justify-center gap-3">
               <button
-                onClick={startGame}
-                className="px-12 py-5 bg-white text-zinc-900 font-black uppercase tracking-[0.2em] rounded-full shadow-2xl hover:bg-zinc-100 transition-all hover:scale-105 active:scale-95"
+                onClick={() => handlePlayerAction('fold')}
+                className="px-8 py-3 bg-zinc-800 text-white font-black uppercase tracking-wider rounded-xl hover:bg-zinc-700 transition-all border border-white/5 active:scale-95"
               >
-                Chơi ván mới
+                Úp Bài (Fold)
+              </button>
+              {gameState === 'preflop' ? (
+                <>
+                  <button
+                    onClick={() => handlePlayerAction('call')}
+                    className="px-8 py-3 bg-white text-zinc-950 font-black uppercase tracking-wider rounded-xl hover:bg-zinc-100 transition-all active:scale-95"
+                  >
+                    Theo cược (Call)
+                  </button>
+                  <button
+                    onClick={() => handlePlayerAction('bet')}
+                    className="px-8 py-3 bg-soviet-gold text-zinc-950 font-black uppercase tracking-wider rounded-xl hover:bg-amber-500 transition-all active:scale-95"
+                  >
+                    Tố Thêm (Raise)
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={() => handlePlayerAction('check')}
+                    className="px-8 py-3 bg-white text-zinc-950 font-black uppercase tracking-wider rounded-xl hover:bg-zinc-100 transition-all active:scale-95"
+                  >
+                    Xem bài (Check)
+                  </button>
+                  <button
+                    onClick={() => handlePlayerAction('bet')}
+                    className="px-8 py-3 bg-soviet-gold text-zinc-950 font-black uppercase tracking-wider rounded-xl hover:bg-amber-500 transition-all active:scale-95"
+                  >
+                    Đặt cược (Bet)
+                  </button>
+                </>
+              )}
+            </div>
+          )}
+
+          {gameState === 'showdown' && (
+            <button
+              onClick={startNewRound}
+              className="px-12 py-4 bg-white text-zinc-900 font-black uppercase tracking-[0.2em] rounded-full shadow-lg hover:bg-zinc-100 transition-all hover:scale-105 active:scale-95"
+            >
+              Ván tiếp theo
+            </button>
+          )}
+
+          {(gameState === 'bankrupt_player' || gameState === 'bankrupt_bot') && (
+            <div className="flex flex-col items-center gap-6">
+              <div className="text-2xl font-black text-center uppercase tracking-wide">
+                {gameState === 'bankrupt_player' ? (
+                  <span className="text-red-500 flex items-center gap-2">
+                    <TriangleAlert /> Đồng chí đã hết sạch chip cược!
+                  </span>
+                ) : (
+                  <span className="text-soviet-gold flex items-center gap-2">
+                    <Trophy /> Xuất sắc! Bạn đã khiến Karl Marx phá sản!
+                  </span>
+                )}
+              </div>
+              <button
+                onClick={resetGame}
+                className="px-12 py-4 bg-soviet-red text-white font-black uppercase tracking-widest rounded-full shadow-lg hover:bg-red-700 transition-all hover:scale-105 active:scale-95"
+              >
+                Chơi lại từ đầu
               </button>
             </div>
           )}
         </div>
       </div>
 
-      {/* Quiz Modal */}
+      {/* QUIZ MODAL */}
       <AnimatePresence>
         {showQuiz && currentQuiz && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
@@ -741,26 +852,33 @@ const CardGame = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={quizFeedback ? closeQuiz : null}
-              className="absolute inset-0 bg-black/80 backdrop-blur-md cursor-pointer"
+              className="absolute inset-0 bg-black/85 backdrop-blur-md"
             />
             <motion.div
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              className="relative w-full max-w-2xl bg-white rounded-[3rem] p-10 shadow-2xl overflow-hidden"
+              className="relative w-full max-w-2xl bg-white rounded-[2.5rem] p-8 md:p-10 shadow-2xl overflow-hidden text-zinc-900"
             >
               <div className="absolute top-0 left-0 w-full h-2 bg-soviet-red" />
               
-              <div className="mb-8 flex items-center gap-4">
-                <div className="w-12 h-12 bg-soviet-red/10 rounded-2xl flex items-center justify-center text-soviet-red">
+              <div className="mb-8 flex items-start gap-4">
+                <div className="w-12 h-12 bg-soviet-red/10 rounded-2xl flex items-center justify-center text-soviet-red shrink-0">
                   <HelpCircle className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-zinc-400 font-black uppercase text-xs tracking-widest italic">Tồn tại & Ý thức xã hội</h3>
-                  <p className="text-zinc-900 font-bold text-lg leading-tight">{currentQuiz.q}</p>
+                  <h3 className="text-zinc-400 font-black uppercase text-[10px] tracking-widest mb-1 italic">Vòng Đấu Cược: Trả Lời Câu Hỏi Để Có Quyền Đi</h3>
+                  <p className="text-zinc-900 font-bold text-base md:text-lg leading-tight">{currentQuiz.q}</p>
                 </div>
               </div>
+
+              {/* Penalty Notice */}
+              {quizFeedback === null && (
+                <div className="mb-6 px-4 py-2 bg-red-50 text-red-700 font-bold text-xs rounded-xl border border-red-100 flex items-center gap-2">
+                  <TriangleAlert className="w-4 h-4 shrink-0" />
+                  <span>Cảnh báo: Trả lời sai bạn sẽ bị phạt tự động đóng thêm {penaltyCost} chips vào Pot!</span>
+                </div>
+              )}
 
               <div className="grid gap-4">
                 {currentQuiz.options.map((option, idx) => (
@@ -768,55 +886,57 @@ const CardGame = () => {
                     key={idx}
                     disabled={quizFeedback !== null}
                     onClick={() => handleQuizAnswer(idx)}
-                    className={`p-5 rounded-2xl border-2 text-left font-bold transition-all flex justify-between items-center group ${
+                    className={`p-4 rounded-xl border-2 text-left font-bold transition-all text-sm flex justify-between items-center group ${
                       quizFeedback === null 
                         ? 'border-zinc-100 hover:border-soviet-red hover:bg-soviet-red/5 text-zinc-700'
                         : idx === currentQuiz.correct
                         ? 'border-green-500 bg-green-50 text-green-700'
-                        : quizFeedback === 'incorrect' && idx !== currentQuiz.correct
-                        ? 'border-zinc-100 text-zinc-300 opacity-50'
-                        : 'border-zinc-100'
+                        : selectedOption === idx
+                        ? 'border-red-500 bg-red-50 text-red-700'
+                        : 'border-zinc-100 text-zinc-300 opacity-60'
                     }`}
                   >
                     <span>{idx + 1}. {option}</span>
-                    {quizFeedback !== null && idx === currentQuiz.correct && <CheckCircle2 className="text-green-500 w-6 h-6" />}
+                    {quizFeedback !== null && idx === currentQuiz.correct && <CheckCircle2 className="text-green-500 w-5 h-5 shrink-0" />}
+                    {quizFeedback !== null && selectedOption === idx && idx !== currentQuiz.correct && <XCircle className="text-red-500 w-5 h-5 shrink-0" />}
                   </button>
                 ))}
               </div>
 
+              {/* Quiz Feedback Explanation */}
               <AnimatePresence>
                 {quizFeedback && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className={`mt-8 p-6 rounded-2xl border-2 flex items-start gap-4 ${
+                    className={`mt-6 p-5 rounded-2xl border-2 flex flex-col gap-3 ${
                       quizFeedback === 'correct' 
-                        ? 'bg-green-50 border-green-200 text-green-800' 
-                        : 'bg-red-50 border-red-200 text-red-800'
+                        ? 'bg-green-50 border-green-200 text-green-900' 
+                        : 'bg-red-50 border-red-200 text-red-900'
                     }`}
                   >
-                    {quizFeedback === 'correct' ? (
-                      <CheckCircle2 className="w-6 h-6 shrink-0 mt-1" />
-                    ) : (
-                      <XCircle className="w-6 h-6 shrink-0 mt-1" />
-                    )}
-                    <div>
-                      <p className="font-black uppercase text-xs tracking-widest mb-1">
-                        {quizFeedback === 'correct' ? 'Chính xác!' : 'Chưa đúng rồi!'}
-                      </p>
-                      <p className="text-sm font-medium leading-relaxed">{currentQuiz.desc}</p>
-                      
-                      <button
-                        onClick={closeQuiz}
-                        className={`mt-4 px-6 py-2 rounded-xl font-black uppercase text-[10px] tracking-widest transition-all ${
-                          quizFeedback === 'correct' 
-                            ? 'bg-green-600 text-white hover:bg-green-700' 
-                            : 'bg-red-600 text-white hover:bg-red-700'
-                        }`}
-                      >
-                        Tiếp tục ván bài
-                      </button>
+                    <div className="flex items-center gap-3">
+                      {quizFeedback === 'correct' ? (
+                        <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" />
+                      ) : (
+                        <XCircle className="w-5 h-5 text-red-600 shrink-0" />
+                      )}
+                      <span className="font-black uppercase text-xs tracking-widest">
+                        {quizFeedback === 'correct' ? 'Chính Xác!' : 'Trả Lời Sai (Bị phạt cược)'}
+                      </span>
                     </div>
+                    <p className="text-xs md:text-sm font-medium leading-relaxed">{currentQuiz.desc}</p>
+                    
+                    <button
+                      onClick={handleQuizResultClose}
+                      className={`self-end px-6 py-2 rounded-xl font-black uppercase text-[10px] tracking-widest transition-all ${
+                        quizFeedback === 'correct' 
+                          ? 'bg-green-600 text-white hover:bg-green-700' 
+                          : 'bg-red-600 text-white hover:bg-red-700'
+                      }`}
+                    >
+                      Tiếp tục ván bài
+                    </button>
                   </motion.div>
                 )}
               </AnimatePresence>

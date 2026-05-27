@@ -7,7 +7,7 @@ const VIDEO_ID = 'S0EUmPQuEpQ'; // Video bài giảng mẫu về Tồn tại xã
 const VideoSection = () => {
   const playerRef = useRef(null);
   const containerRef = useRef(null);
-  
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -269,20 +269,22 @@ const VideoSection = () => {
           ref={containerRef}
           onMouseMove={handleMouseMove}
           onMouseLeave={() => isPlaying && setShowControls(false)}
-          className={`bg-white border-4 border-soviet-red shadow-2xl p-8 rounded-3xl flex flex-col gap-6 relative transition-all duration-300 ${
-            isFullscreen ? 'w-screen h-screen border-0 rounded-none p-0 bg-black justify-center gap-0' : ''
+          className={`shadow-2xl transition-all duration-300 relative ${
+            isFullscreen 
+              ? 'w-screen h-screen border-0 rounded-none p-0 bg-black overflow-hidden flex flex-col justify-center' 
+              : 'bg-white border-4 border-soviet-red p-8 rounded-3xl flex flex-col gap-6'
           }`}
           style={isFullscreen ? { width: '100vw', height: '100vh', zIndex: 99999 } : {}}
         >
           {/* Vùng Video */}
           <div className={`bg-black overflow-hidden relative group ${
-            isFullscreen ? 'w-full h-full' : 'aspect-video w-full rounded-2xl border-4 border-soviet-gold shadow-lg'
+            isFullscreen ? 'absolute inset-0 w-full h-full border-0 rounded-none shadow-none' : 'aspect-video w-full rounded-2xl border-4 border-soviet-gold shadow-lg'
           }`}>
             {/* YouTube Iframe */}
             <div id="youtube-player" className="w-full h-full pointer-events-none"></div>
 
             {/* Lớp phủ trong suốt chặn focus vào iframe nhưng vẫn bấm được Play/Pause */}
-            <div 
+            <div
               className="absolute inset-0 z-10 bg-transparent cursor-pointer select-none outline-none"
               style={{ WebkitTapHighlightColor: 'transparent' }}
               onClick={handlePlayPause}
@@ -294,9 +296,8 @@ const VideoSection = () => {
                 e.stopPropagation(); // Ngăn kích hoạt Play/Pause của lớp phủ
                 toggleFullscreen();
               }}
-              className={`absolute bottom-4 right-4 z-20 p-3 bg-black/60 hover:bg-black/85 backdrop-blur-md border border-white/20 rounded-full text-white transition-all duration-300 hover:scale-105 active:scale-95 ${
-                showControls || !isPlaying ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-90 pointer-events-none'
-              }`}
+              className={`absolute bottom-4 right-4 z-20 p-3 bg-black/60 hover:bg-black/85 backdrop-blur-md border border-white/20 rounded-full text-white transition-all duration-300 hover:scale-105 active:scale-95 ${showControls || !isPlaying ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-90 pointer-events-none'
+                }`}
               title={isFullscreen ? 'Thu nhỏ (F)' : 'Phóng to (F)'}
             >
               {isFullscreen ? <Minimize className="w-5 h-5" /> : <Maximize className="w-5 h-5" />}

@@ -39,7 +39,7 @@ const TypesOfConnections = () => {
             Ý Thức Xã Hội (Đời Sống Tinh Thần)
           </h2>
           <p className="text-lg text-zinc-500 max-w-3xl mx-auto font-medium">
-            Ý thức xã hội là phương diện sinh hoạt tinh thần. Nó không tự nhiên sinh ra mà là **sản phẩm phản ánh** của đời sống vật chất thực tế (tồn tại xã hội) ở từng thời kỳ lịch sử.
+            Ý thức xã hội là phương diện sinh hoạt tinh thần. Nó không tự nhiên sinh ra mà là sản phẩm phản ánh của đời sống vật chất thực tế (tồn tại xã hội) ở từng thời kỳ lịch sử.
           </p>
         </motion.div>
 
@@ -51,20 +51,17 @@ const TypesOfConnections = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: false }}
               transition={{ delay: idx * 0.1 }}
-              className={`p-8 rounded-2xl border-2 transition-all group cursor-pointer bg-white ${
-                idx === 0 
-                ? 'border-soviet-orange shadow-lg' 
+              className={`p-8 rounded-2xl border-2 transition-all group cursor-pointer bg-white ${idx === 0
+                ? 'border-soviet-orange shadow-lg'
                 : 'border-soviet-red/20 hover:border-soviet-red/50 hover:shadow-md'
-              }`}
+                }`}
             >
-              <div className={`w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm ${
-                idx === 0 ? 'bg-soviet-red' : 'bg-soviet-orange'
-              }`}>
+              <div className={`w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm ${idx === 0 ? 'bg-soviet-red' : 'bg-soviet-orange'
+                }`}>
                 <c.icon className="w-7 h-7 text-white" />
               </div>
-              <h3 className={`text-xl font-bold text-center mb-4 ${
-                idx === 0 ? 'text-soviet-orange' : 'text-soviet-red'
-              }`}>
+              <h3 className={`text-xl font-bold text-center mb-4 ${idx === 0 ? 'text-soviet-orange' : 'text-soviet-red'
+                }`}>
                 {c.title}
               </h3>
               <p className="text-zinc-600 text-center text-sm leading-relaxed">
