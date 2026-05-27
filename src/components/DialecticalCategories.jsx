@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Scale, ShieldCheck, Users2, Landmark } from 'lucide-react';
+import { Scale, ShieldCheck, Users2, Landmark, Zap } from 'lucide-react';
 
 const items = [
   {
@@ -22,6 +22,11 @@ const items = [
     icon: Landmark,
     title: 'Tính kế thừa và sự tác động qua lại',
     desc: 'Ý thức xã hội của một thời đại kế thừa di sản tinh thần của thế hệ trước. Đồng thời, các hình thái ý thức chính trị, đạo đức, khoa học, tôn giáo... thường xuyên tác động, ảnh hưởng lẫn nhau.'
+  },
+  {
+    icon: Zap,
+    title: 'YTXH TÁC ĐỘNG TRỞ LẠI TTXH',
+    desc: 'Ý thức xã hội không thụ động mà có tính độc lập tương đối, tác động mạnh mẽ trở lại tồn tại xã hội. Ý thức tiến bộ, khoa học sẽ thúc đẩy xã hội phát triển; ngược lại, ý thức lạc hậu sẽ cản trước sự tiến bộ.'
   }
 ];
 

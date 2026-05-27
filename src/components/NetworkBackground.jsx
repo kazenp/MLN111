@@ -38,7 +38,7 @@ const NetworkBackground = () => {
             y1={nodes[conn.i].y}
             x2={nodes[conn.j].x}
             y2={nodes[conn.j].y}
-            stroke="#da251d"
+            stroke="#0D5C75"
             strokeWidth="0.08"
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: conn.opacity }}
@@ -51,8 +51,8 @@ const NetworkBackground = () => {
             cx={node.x}
             cy={node.y}
             r={node.size / 12}
-            fill="#ffcd00"
-            stroke="#da251d"
+            fill="#D97706"
+            stroke="#0D5C75"
             strokeWidth="0.05"
             animate={{
               opacity: [0.3, 1, 0.3],

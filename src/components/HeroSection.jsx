@@ -4,7 +4,7 @@ import NetworkBackground from './NetworkBackground';
 
 const HeroSection = () => {
   return (
-    <section className="relative h-screen w-full flex items-center justify-center bg-white overflow-hidden border-b-8 border-soviet-red">
+    <section className="relative h-screen w-full flex items-center justify-center bg-white overflow-hidden">
       <NetworkBackground />
 
       <div className="z-10 text-center px-4 max-w-5xl -mt-8 md:-mt-12">

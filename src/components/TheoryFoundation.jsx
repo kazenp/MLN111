@@ -1,22 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Network, Zap } from 'lucide-react';
+import { Users, Crown, ShieldAlert } from 'lucide-react';
 
 const principles = [
   {
-    icon: Globe,
-    title: "Giai Cấp",
-    description: "Nhận diện phân hóa xã hội dựa trên vị trí trong sản xuất, tư liệu sản xuất và cách phân phối của cải.",
+    icon: Users,
+    title: "Tính Giai Cấp",
+    description: "Trong xã hội có giai cấp, ý thức xã hội luôn mang tính giai cấp. Tâm lý, tình cảm, thói quen và hệ tư tưởng sẽ khác nhau giữa các giai cấp.",
   },
   {
-    icon: Network,
-    title: "Dân Tộc",
-    description: "Hiểu dân tộc như một cộng đồng ổn định, có lãnh thổ, ngôn ngữ, kinh tế, văn hóa và tâm lý chung.",
+    icon: Crown,
+    title: "Giai Cấp Thống Trị",
+    description: "Nắm giữ điều kiện vật chất và địa vị cao, lợi ích lớn. Hệ tư tưởng của họ thường đóng vai trò thống trị hệ tư tưởng của toàn xã hội để bảo vệ lợi ích ích kỷ.",
   },
   {
-    icon: Zap,
-    title: "Quan Hệ",
-    description: "Nắm được mối quan hệ vừa thống nhất vừa mâu thuẫn giữa giai cấp và dân tộc trong từng hoàn cảnh.",
+    icon: ShieldAlert,
+    title: "Giai Cấp Bị Trị",
+    description: "Có điều kiện vật chất và địa vị thấp kém. Ý thức của họ phản ánh sự đối lập lợi ích, từ đó hình thành các hệ tư tưởng tiến bộ đấu tranh cho sự công bằng.",
   },
 ];
 
@@ -31,10 +31,10 @@ const TheoryFoundation = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold text-soviet-red mb-6">
-            Cơ Sở Lý Luận
+            Tính Giai Cấp Của YTXH
           </h2>
           <p className="text-lg text-zinc-600 max-w-2xl mx-auto font-medium">
-            Ba ý chính để hiểu đúng nội dung giai cấp và dân tộc trong triết học Mác - Lênin.
+            Sự phân hóa của tồn tại xã hội kéo theo sự phân hóa sâu sắc trong đời sống tinh thần.
           </p>
         </motion.div>
 
