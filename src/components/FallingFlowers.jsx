@@ -36,7 +36,7 @@ const Petal = ({ delay, duration, x, size, rotation, color }) => {
 
 const FallingFlowers = () => {
   const petals = useMemo(() => {
-    const colors = ['#da251d', '#ffcd00', '#fecaca', '#fca5a5'];
+    const colors = ['#0D5C75', '#D97706', '#99f6e4', '#fed7aa'];
     return Array.from({ length: 25 }).map((_, i) => ({
       id: i,
       delay: Math.random() * 10,

@@ -2,12 +2,30 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const pairs = [
-  { title: "Giai cấp", desc: "Những tập đoàn người lớn khác nhau về vị trí trong sản xuất xã hội, quan hệ với tư liệu sản xuất và cách hưởng thụ của cải." },
-  { title: "Dân tộc", desc: "Cộng đồng người ổn định có lãnh thổ, ngôn ngữ, đời sống kinh tế, văn hóa và tâm lý chung." },
-  { title: "Thống nhất", desc: "Giai cấp và dân tộc cùng tồn tại trong một cộng đồng xã hội và cùng chịu tác động của lịch sử." },
-  { title: "Mâu thuẫn", desc: "Trong một số bối cảnh, lợi ích giai cấp và lợi ích dân tộc có thể khác nhau và cần được xử lý đúng lúc." },
-  { title: "Giải phóng", desc: "Cách mạng Việt Nam kết hợp giải phóng dân tộc với giải phóng giai cấp để đi tới mục tiêu chung." },
-  { title: "Ý nghĩa", desc: "Nhận thức đúng giúp xây dựng chính sách hợp lý và củng cố đoàn kết dân tộc." }
+  { 
+    title: "Ý thức thông thường", 
+    desc: "Tri thức, quan niệm hình thành trực tiếp trong hoạt động thường ngày. Rất sinh động, phong phú nhưng ở trình độ thấp, chưa được khái quát hóa, dễ thấy bề mặt." 
+  },
+  { 
+    title: "Ý thức lý luận", 
+    desc: "Những tư tưởng, quan niệm được tổng quát, hệ thống hóa thành học thuyết, phạm trù. Phản ánh sâu sắc, chính xác bản chất các quan hệ xã hội ở trình độ cao." 
+  },
+  { 
+    title: "Tâm lý xã hội", 
+    desc: "Bao gồm tình cảm, ước muốn, thói quen, tập quán của con người hình thành trực tiếp dưới tác động của đời sống hàng ngày (thuộc ý thức thông thường)." 
+  },
+  { 
+    title: "Hệ tư tưởng", 
+    desc: "Hệ thống các quan điểm, tư tưởng (chính trị, triết học, nghệ thuật,...) phản ánh sâu sắc, gián tiếp tồn tại xã hội (thuộc ý thức lý luận)." 
+  },
+  { 
+    title: "Ý thức cá nhân", 
+    desc: "Là thế giới tinh thần của từng con người cụ thể. Ý thức cá nhân có phản ánh ý thức xã hội nhưng mang đậm dấu ấn hoàn cảnh sống riêng biệt." 
+  },
+  { 
+    title: "Ý thức xã hội", 
+    desc: "Ý thức xã hội luôn phải được thể hiện qua các ý thức cá nhân cụ thể. Tuy nhiên, không một ý thức cá nhân nào có thể đại diện cho toàn bộ ý thức xã hội." 
+  }
 ];
 
 const DialecticalPairs = () => {
@@ -20,8 +38,8 @@ const DialecticalPairs = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight">Các Ý Chính Của Bài Học</h2>
-          <p className="text-zinc-600 max-w-2xl mx-auto">Các khái niệm trọng tâm giúp hệ thống hóa nội dung giai cấp và dân tộc.</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight">Kết Cấu Của Ý Thức Xã Hội</h2>
+          <p className="text-zinc-600 max-w-2xl mx-auto">Phân loại theo trình độ nhận thức và chủ thể phản ánh trong đời sống tinh thần.</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

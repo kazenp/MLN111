@@ -8,12 +8,12 @@ export default {
     extend: {
       colors: {
         soviet: {
-          red: "#da251d",
-          gold: "#ffcd00",
-          orange: "#f59e0b",
+          red: "#0D5C75",
+          gold: "#D97706",
+          orange: "#0EA5E9",
           white: "#ffffff",
-          offwhite: "#fff9f9",
-          darkred: "#b01d16",
+          offwhite: "#FAFAF9",
+          darkred: "#083F51",
         }
       },
       fontFamily: {
@@ -21,8 +21,8 @@ export default {
         serif: ['Lora', 'serif'],
       },
       boxShadow: {
-        'red-glow': '0 0 15px rgba(218, 37, 29, 0.2)',
-        'gold-glow': '0 0 15px rgba(245, 158, 11, 0.2)',
+        'red-glow': '0 0 15px rgba(13, 92, 117, 0.2)',
+        'gold-glow': '0 0 15px rgba(217, 119, 6, 0.2)',
       }
     },
   },

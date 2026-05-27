@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const nodes = [
-  { id: 'existence', label: 'Tồn tại xã hội', x: 25, y: 50, color: '#da251d', width: 22 },
-  { id: 'consciousness', label: 'Ý thức xã hội', x: 75, y: 50, color: '#da251d', width: 22 },
-  { id: 'production', label: 'Phương thức sản xuất', x: 25, y: 20, color: '#f59e0b', width: 30 },
-  { id: 'natural_pop', label: 'Dân cư & Tự nhiên', x: 15, y: 80, color: '#f59e0b', width: 26 },
-  { id: 'dialectics', label: 'Quan hệ biện chứng', x: 50, y: 50, color: '#da251d', width: 26 },
-  { id: 'independence', label: 'Tính độc lập tương đối', x: 75, y: 80, color: '#f59e0b', width: 32 },
-  { id: 'forms', label: 'Các hình thái ý thức', x: 80, y: 20, color: '#f59e0b', width: 30 },
+  { id: 'existence', label: 'Tồn tại xã hội', x: 25, y: 50, color: '#0D5C75', width: 22 },
+  { id: 'consciousness', label: 'Ý thức xã hội', x: 75, y: 50, color: '#0D5C75', width: 22 },
+  { id: 'production', label: 'Phương thức sản xuất', x: 25, y: 20, color: '#D97706', width: 30 },
+  { id: 'natural_pop', label: 'Dân cư & Tự nhiên', x: 15, y: 80, color: '#D97706', width: 26 },
+  { id: 'dialectics', label: 'Quan hệ biện chứng', x: 50, y: 50, color: '#0D5C75', width: 26 },
+  { id: 'independence', label: 'Tính độc lập tương đối', x: 75, y: 80, color: '#D97706', width: 32 },
+  { id: 'forms', label: 'Các hình thái ý thức', x: 80, y: 20, color: '#D97706', width: 30 },
 ];
 
 const links = [
@@ -60,7 +60,7 @@ const MindMap = () => {
                 y1={sourceNode.y}
                 x2={targetNode.x}
                 y2={targetNode.y}
-                stroke={active ? '#da251d' : '#f4f4f5'}
+                stroke={active ? '#0D5C75' : '#f4f4f5'}
                 strokeWidth={active ? 0.8 : 0.4}
                 transition={{ duration: 0.3 }}
               />
@@ -84,7 +84,7 @@ const MindMap = () => {
                   cx={node.x}
                   cy={node.y}
                   r="1.5"
-                  fill={active ? '#da251d' : node.color}
+                  fill={active ? '#0D5C75' : node.color}
                   className="pointer-events-none"
                 />
 
@@ -97,7 +97,7 @@ const MindMap = () => {
                   rx="1.5"
                   ry="1.5"
                   fill="white"
-                  stroke={active ? '#da251d' : node.color}
+                  stroke={active ? '#0D5C75' : node.color}
                   strokeWidth={active ? 0.6 : 0.4}
                   animate={{
                     scale: active ? 1.05 : 1,
@@ -113,7 +113,7 @@ const MindMap = () => {
                   y={node.y}
                   dy="0.8"
                   textAnchor="middle"
-                  fill={active ? '#da251d' : '#27272a'}
+                  fill={active ? '#0D5C75' : '#27272a'}
                   fontSize="2.2"
                   fontWeight="900"
                   className="pointer-events-none select-none uppercase tracking-wider"
