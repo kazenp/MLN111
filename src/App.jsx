@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import TheorySection from './components/TheorySection'
@@ -11,7 +11,28 @@ import InteractiveGame from './components/InteractiveGame'
 import Footer from './components/Footer'
 import FallingFlowers from './components/FallingFlowers'
 import VideoSection from './components/VideoSection'
-import CardGame from './components/CardGame'
+import PresentationOverview from './components/PresentationOverview'
+
+// Helper component to scroll window on route change (to top or to specific hash)
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const elementId = hash.replace('#', '');
+      setTimeout(() => {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+};
 
 const HomePage = () => (
   <>
@@ -41,6 +62,7 @@ const HomePage = () => (
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <main className="bg-soviet-offwhite min-h-screen text-zinc-800">
         {/* <FallingFlowers /> */}
         <Navbar />
@@ -48,7 +70,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/video" element={<VideoSection />} />
-          <Route path="/game" element={<CardGame />} />
+          <Route path="/overview" element={<PresentationOverview />} />
         </Routes>
         
         <Footer />

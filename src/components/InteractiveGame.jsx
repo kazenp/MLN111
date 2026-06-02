@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CircleCheck, CircleAlert, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { CircleCheck, CircleAlert, ArrowLeft, Video } from 'lucide-react';
 
 const initialItems = [
   { id: 1, cause: "Kinh tế số & Sự xuất hiện thương mại điện tử", effect: "Hình thành thói quen mua sắm online & Luật an ninh mạng" },
@@ -47,7 +48,7 @@ const InteractiveGame = () => {
   };
 
   return (
-    <section className="py-24 px-6 bg-white border-y border-zinc-100 relative">
+    <section id="game" className="py-24 px-6 bg-white border-y border-zinc-100 relative">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -169,15 +170,24 @@ const InteractiveGame = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="mt-16 p-12 bg-white border-4 border-soviet-gold rounded-[3rem] shadow-[0_30px_60px_-15px_rgba(245,158,11,0.3)] relative overflow-hidden"
+              className="mt-16 p-12 bg-white border-4 border-soviet-gold rounded-[3rem] shadow-[0_30px_60px_-15px_rgba(245,158,11,0.3)] relative overflow-hidden text-center"
             >
               <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-soviet-red via-soviet-gold to-soviet-red" />
               <h4 className="text-4xl font-black text-zinc-900 mb-6 uppercase tracking-tighter">Liên Kết Hoàn Tất</h4>
-              <p className="text-soviet-red text-2xl italic font-serif leading-tight">
+              <p className="text-soviet-red text-2xl italic font-serif leading-tight max-w-2xl mx-auto">
                 "Ý thức xã hội phản ánh tồn tại xã hội và tác động trở lại mạnh mẽ tồn tại xã hội đó."
               </p>
-              <div className="mt-8 text-zinc-400 font-black uppercase tracking-[0.4em] text-xs">
-                — Tồn tại xã hội &amp; Ý thức xã hội
+              <div className="mt-8 flex flex-col items-center justify-center gap-6 border-t border-zinc-100 pt-8">
+                <div className="text-zinc-400 font-black uppercase tracking-[0.4em] text-xs">
+                  — Tồn tại xã hội &amp; Ý thức xã hội
+                </div>
+                <Link
+                  to="/video"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-soviet-red text-white font-black uppercase text-xs tracking-widest rounded-xl hover:scale-105 active:scale-95 transition-all shadow-lg shadow-soviet-red/20 whitespace-nowrap"
+                >
+                  <Video className="w-4 h-4" />
+                  Xem Phim Tương Tác
+                </Link>
               </div>
             </motion.div>
           )}
