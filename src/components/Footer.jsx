@@ -28,22 +28,6 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="flex gap-12">
-            {[
-              { name: 'Tồn tại', id: 'theory' },
-              { name: 'Ý thức', id: 'connections' },
-              { name: 'Biện chứng', id: 'dialectics' },
-              { name: 'Tác động', id: 'cases' }
-            ].map(item => (
-              <a 
-                key={item.id} 
-                href={`#${item.id}`} 
-                className="text-zinc-500 hover:text-soviet-red font-black text-xs uppercase tracking-[0.2em] transition-all hover:translate-y-[-2px]"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
           
           <div className="px-6 py-2 bg-soviet-gold text-white font-black text-[10px] uppercase tracking-[0.3em] rounded-full shadow-md">
             Biện chứng đời sống vật chất và tinh thần

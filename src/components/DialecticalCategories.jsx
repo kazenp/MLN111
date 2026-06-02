@@ -32,12 +32,18 @@ const items = [
 
 const DialecticalCategories = () => {
   return (
-    <section className="py-24 px-6 bg-zinc-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24 px-6 bg-zinc-50 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+        <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-soviet-red filter blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-soviet-gold filter blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-6xl font-black text-soviet-red mb-6 uppercase tracking-tighter italic">
             Biện Chứng Quyết Định Của Đời Sống
@@ -48,30 +54,54 @@ const DialecticalCategories = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {items.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-3xl border-2 border-zinc-100 p-8 shadow-sm hover:shadow-2xl hover:border-soviet-red/30 transition-all duration-500"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-soviet-red/10 text-soviet-red flex items-center justify-center mb-6">
-                  <Icon className="w-7 h-7" />
+        <div className="relative">
+          {/* Cột cây thẳng đứng / Trục thời gian */}
+          <div className="absolute left-6 md:left-1/2 transform -translate-x-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-soviet-red via-soviet-gold to-soviet-red rounded-full" />
+
+          <div className="space-y-12 md:space-y-16">
+            {items.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div 
+                  key={item.title} 
+                  className={`flex flex-col md:flex-row items-center relative ${
+                    index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                  }`}
+                >
+                  {/* Nội dung card */}
+                  <div className="w-full md:w-[45%] pl-16 md:pl-0">
+                    <motion.div
+                      initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.6, ease: 'easeOut' }}
+                      className="bg-white rounded-3xl border-2 border-zinc-100 p-8 shadow-sm hover:shadow-2xl hover:border-soviet-red/30 transition-all duration-500 relative group"
+                    >
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="w-12 h-12 rounded-xl bg-soviet-red/10 text-soviet-red flex items-center justify-center flex-shrink-0 group-hover:bg-soviet-red group-hover:text-white transition-colors duration-300">
+                          <Icon className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-xl md:text-2xl font-black text-zinc-800 uppercase tracking-tight leading-tight">
+                          {item.title}
+                        </h3>
+                      </div>
+                      <p className="text-zinc-600 text-sm leading-relaxed font-semibold">
+                        {item.desc}
+                      </p>
+                    </motion.div>
+                  </div>
+
+                  {/* Nút tròn / Nút cây (Dot) */}
+                  <div className="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full border-4 border-white bg-soviet-red shadow-lg z-20 flex items-center justify-center">
+                    <div className="w-2.5 h-2.5 rounded-full bg-soviet-gold animate-pulse" />
+                  </div>
+
+                  {/* Spacer chiếm chỗ */}
+                  <div className="hidden md:block w-[45%]" />
                 </div>
-                <h3 className="text-2xl font-black text-zinc-800 mb-4 uppercase tracking-tight">
-                  {item.title}
-                </h3>
-                <p className="text-zinc-600 text-sm leading-relaxed font-medium">
-                  {item.desc}
-                </p>
-              </motion.div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
