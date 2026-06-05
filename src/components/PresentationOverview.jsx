@@ -17,6 +17,7 @@ const PresentationOverview = () => {
     { title: "Tính độc lập tương đối", desc: "Sự kế thừa, lạc hậu hay vượt trước của ý thức xã hội so với đời sống vật chất thực tiễn.", path: "/#connections" },
     { title: "Liên hệ thực tiễn hiện nay", desc: "3 dẫn chứng lớn chứng minh nhận định của Marx: Kinh tế số, Biến đổi khí hậu, và Bình đẳng giới.", path: "/#cases" },
     { title: "Bài học & Thử thách tương tác", desc: "Ý nghĩa phương pháp luận cải tạo đời sống tinh thần và phần thử thách củng cố kiến thức.", path: "/#methodology" },
+    { title: "Các hình thái ý thức xã hội", desc: "7 hình thái ý thức xã hội phản ánh các góc độ của đời sống thực tiễn từ chính trị đến triết học.", path: "/#forms" },
   ];
 
   const tools = [
