@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Maximize, Minimize } from 'lucide-react';
 
-const VIDEO_ID = 'S0EUmPQuEpQ'; // Video bài giảng mẫu về Tồn tại xã hội & Ý thức xã hội
+const VIDEO_ID = 'Z-iYN-QF8p8'; // Video bài giảng mẫu về Tồn tại xã hội & Ý thức xã hội
 
 const VideoSection = () => {
   const playerRef = useRef(null);
