@@ -12,6 +12,7 @@ import Footer from './components/Footer'
 import FallingFlowers from './components/FallingFlowers'
 import VideoSection from './components/VideoSection'
 import PresentationOverview from './components/PresentationOverview'
+import SocialConsciousnessForms from './components/SocialConsciousnessForms'
 
 // Helper component to scroll window on route change (to top or to specific hash)
 const ScrollToTop = () => {
@@ -53,6 +54,9 @@ const HomePage = () => (
     </div>
     <div id="methodology">
       <MethodologicalMeaning />
+    </div>
+    <div id="forms">
+      <SocialConsciousnessForms />
     </div>
 
     <InteractiveGame />
