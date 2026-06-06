@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Users, ListOrdered } from 'lucide-react';
+import { Users, ListOrdered, ShieldCheck, ExternalLink } from 'lucide-react';
 
 const PresentationOverview = () => {
   const members = [
@@ -95,6 +95,70 @@ const PresentationOverview = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Section 3: AI Usage Appendix */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 p-8 md:p-12 bg-white border-4 border-soviet-red shadow-2xl rounded-[3rem] relative overflow-hidden text-zinc-800"
+        >
+          <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-soviet-red via-soviet-gold to-soviet-red" />
+
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 pb-6 border-b border-zinc-150">
+            <div>
+              <h3 className="text-3xl font-black text-zinc-900 uppercase tracking-tight italic flex items-center gap-3">
+                <ShieldCheck className="w-8 h-8 text-soviet-red" /> Phụ lục: AI Usage
+              </h3>
+              <p className="text-zinc-500 text-sm font-semibold mt-2">
+                Minh bạch phạm vi ứng dụng AI và phân định trách nhiệm học thuật của nhóm
+              </p>
+            </div>
+
+            <a
+              href="https://docs.google.com/document/d/1B4As0RpUvs11iC_DbPI1il5NTaD8tEx78thSRfpB0KY/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-4 bg-soviet-gold text-white font-black uppercase text-xs tracking-widest rounded-xl hover:scale-105 active:scale-95 transition-all shadow-lg shadow-soviet-gold/20 whitespace-nowrap"
+            >
+              Tài liệu của nhóm <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse min-w-[600px] text-xs md:text-sm">
+              <thead>
+                <tr className="border-b-2 border-zinc-200 text-zinc-400 font-bold uppercase tracking-wider pb-3">
+                  <th className="py-4 px-4 w-1/4">Tiêu chí</th>
+                  <th className="py-4 px-4 w-5/12">Nội dung chi tiết</th>
+                  <th className="py-4 px-4 w-1/3">Phân định trách nhiệm</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-zinc-150/50 font-medium text-zinc-700">
+                <tr className="hover:bg-zinc-50/50 transition-colors">
+                  <td className="py-5 px-4 font-black text-zinc-900">Kiểm chứng thông tin</td>
+                  <td className="py-5 px-4 text-zinc-650 leading-relaxed">Mọi nội dung lý thuyết đều được đối chiếu trực tiếp từ giáo trình của giáo viên và video bài giảng trên YouTube.</td>
+                  <td className="py-5 px-4 text-soviet-red font-bold leading-relaxed">Nhóm tự kiểm chứng và chịu trách nhiệm về tính chính xác của nội dung cuối cùng.</td>
+                </tr>
+                <tr className="hover:bg-zinc-50/50 transition-colors">
+                  <td className="py-5 px-4 font-black text-zinc-900">Xây dựng kịch bản</td>
+                  <td className="py-5 px-4 text-zinc-650 leading-relaxed">Kịch bản gốc do các thành viên trong nhóm tự lên ý tưởng. AI chỉ đóng vai trò hỗ trợ soạn thảo lại chuẩn prompt.</td>
+                  <td className="py-5 px-4 text-soviet-red font-bold leading-relaxed">Nhóm biên soạn nội dung gốc; AI chỉ là công cụ hỗ trợ, không thay thế hoàn toàn.</td>
+                </tr>
+                <tr className="hover:bg-zinc-50/50 transition-colors">
+                  <td className="py-5 px-4 font-black text-zinc-900">Sáng tạo &amp; Sản xuất</td>
+                  <td className="py-5 px-4 text-zinc-650 leading-relaxed">Sử dụng Google Gemini để xây dựng prompt và trao đổi, giải đáp thắc mắc; Google Flow để tạo phân đoạn ảnh; Google Antigravity tạo sản phẩm web.</td>
+                  <td className="py-5 px-4 text-soviet-red font-bold leading-relaxed">Khâu cắt ghép, edit video và sản phẩm cuối cùng hoàn toàn do các thành viên nhóm tự thực hiện.</td>
+                </tr>
+                <tr className="hover:bg-zinc-50/50 transition-colors">
+                  <td className="py-5 px-4 font-black text-zinc-900">Cam kết liêm chính</td>
+                  <td className="py-5 px-4 text-zinc-650 leading-relaxed">Nhóm cam kết AI chỉ đóng vai trò hỗ trợ (tạo ảnh, chatbot...), không thay thế công việc tư duy và biên soạn của sinh viên.</td>
+                  <td className="py-5 px-4 text-soviet-red font-bold leading-relaxed">Nhóm xác nhận đã đối chiếu nguồn chính thống cho các thông tin do AI sinh ra và chịu trách nhiệm toàn bộ về sản phẩm.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
